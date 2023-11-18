@@ -1,0 +1,99 @@
+/* ESTILOS GENERALES */
+body {
+  font-family: Calibri, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #ffeedd;
+  padding: 15px 0;
+  top: 0; /* Fijamos la barra de navegación en la parte superior */
+  position: sticky; /*Nos aseguramos de no se va con el scroll */
+  z-index: 100; /* y de que se queda por encima del resto del contenido */
+}
+
+
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: yellow;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+h2{
+  color:blue;
+}
+
+img{
+  max-height:300px;
+}
+
+/* Estilos para pantallas grandes (ordenador) */
+@media screen and (min-width: 1024px) {
+  .blog-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    display: block;
+  }
+  .blog-wrapper article {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+  }
+}
+
+/* Estilos para pantallas medianas (tablets) */
+/*@media screen (min-width:768px) and (max-width: 1023px) { ESTO DA PROBLEMAS... */
+@media screen and (max-width: 1023px) {
+  .blog-wrapper {
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr);*/
+    grid-template-columns:  1fr 1fr;
+    gap: 20px;
+  }
+
+  img{
+    max-height:150px;
+  }
+}
+
+/* Estilos para pantallas pequeñas (dispositivos móviles) */
+@media screen and (max-width: 767px) {
+  .blog-wrapper {
+    display: block;
+    /* Mejor con display:flex;?? */
+  }
+  .blog-wrapper article img {
+    display: none; /* Quitamos las imágenes en pantallas pequeñas */
+  }
+  .blog-wrapper article {
+    margin-bottom: 15px;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  h2 {
+    font-size: 1.5em; /* Ajustamos tamaño de fuente para mejorar legibilidad */
+  }
+  p {
+    font-size: 1em; /* Ajustamos tamaño de fuente para mejorar legibilidad */
+    line-height: 1.5; /* y también espaciado entre líneas */
+  }
+}
